@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Document</title>
+        <script>
+            function mouseOver(state) {
+                const element = document.getElementById('dress');
+                if(state===1){
+                    element.style.display = 'block'
+                }else {
+                    element.style.display = 'none'
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>홈</li>
+            <li onmouseover="mouseOver(1)" onmouseleave="mouseOver(2)" >옷장
+                <ul id="dress" style="display: none;">
+                    <li>드레스</li>
+                    <li>정장</li>
+                    <li>치마</li>
+                    <li>바지</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </body>
+</html>

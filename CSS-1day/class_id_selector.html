@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>class, id 선택자</title>
+        <style>
+            .C1 {
+                color: blue;
+                background-color: yellow;
+            }
+            .C2 {
+                color: red;
+                background-color: pink;
+            }
+            /* type 선택자와 class 선택자의 조함 */
+            h1.C1 {
+                background-color: red;
+            }
+            p.C1 {
+                color: violet;
+            }
+            /* id 선택자 */
+            #id1 {
+                color: hotpink;
+            }
+            #id2 {
+                color: violet;
+            }
+            /*  type 선택자와 id 선택자의 조합 */
+            h1#id1 {
+               color: antiquewhite;
+            }
+            p#id2 {
+                background-color: yellow;
+            }
+            .C3 {
+                border-bottom: 2px dashed red;
+            }
+            .C4 {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>클래스 선택자</h1>
+        <h1 class= "C1">class selector 1</h1>
+        <h2 class= "C1">class selector 2</h2>
+        <h3 class= "C1">class selector 3</h3>
+        <p class= "C1">class selector 4</p>
+        <h3 class= "C1">class selector 5</h3>
+        <p class= "C2">class selector 6</p>
+        <h1 class= "C2">class selector 7</h1>
+        <hr>
+        <h1 id= "id1" class="C3">아이디 선택자</h1>
+        <h1 id= "id1" class="C4">id selector 1</h1>
+        <h2 id= "id1" class= "C3">id selector 2</h2>
+        <h3 id= "id1">id selector 3</h3>
+        <p id= "id1">id selector 4</p>
+        <h3 id= "id2" >id selector 5</h3>
+        <p id= "id2" class= "C1">id selector 6</p>
+        <h1 id= "id2">id selector 7</h1>
+        <hr>
+        <h3 class="C3 C4 C2">다중 클래스 지정</h3>
+        <p class="C3">class 속성에 여러 클래스 값을 지정하여</p>
+        <p class="C4">복합적인 스타일을 설정할 수 있다.</p>
+    </body>
+</html>

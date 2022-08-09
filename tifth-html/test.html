@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>오늘 내가 할일은</title>
+        <script>
+            function listSave(state) {
+                let i =1+1
+                let list = document.getElementById('list')
+                let list_input = document.getElementById('list_input')
+                list.innerHTML+=`<p><input type='checkbox' id=${i} onchange='oncheck(checked)'>${state}</p>`
+                list_input.value=""
+            }
+            function oncheck(check) {
+                console.log(document.querySelectorAll('p'))
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h2>checkList</h2>
+        <div id="list">
+
+        </div>
+        <form onsubmit="return false">
+            <input type="text" id="list_input" value=""><input onclick="listSave(list_input.value)" type="submit" value="저장">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>버튼으로 배경 바꾸기</title>
+        <script>
+            function change(state) {
+                document.body.style.backgroundColor=state
+            }
+            function keychange(text) {
+                const newText = document.getElementById('newText')
+                newText.innerHTML=text
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="change('red')">빨강</button>
+        <button onclick="change('blue')">파랑</button>
+        <button onclick="change('yellow')">노랑</button>
+        <button onclick="change('black')">검정</button>
+        
+        <form>
+            <input type="text" placeholder="이름을 입력해주세요" onkeydown="keychange(value)">
+            <p id="newText">안녕하세요</p>
+        </form>
+    </body>
+</html>

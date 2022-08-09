@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>선택목록</title>
+    </head>
+    <body>
+        <h2>휴대전화 번호 입력(단일선택)</h2>
+        <form>
+            <select name="nums">
+                <option value="skt">SKT</option>
+                <option value="kt" selected>KT</option>
+                <option value="lg">LG</option>
+                <option value="etc">기타</option>
+            </select>
+        </form>
+        <h2>자동차 브랜드(다중선택)</h2>
+        <form>
+            <select name="car" multiple size="2">
+                <option value="hy">현대</option>
+                <option value="ki">기아</option>
+                <option value="bmw">BMW</option>
+                <option value="fox">폭스바겐</option>
+                <option value="ven">벤츠</option>
+            </select>
+        </form>
+        <hr>
+        <h2>datalist</h2>
+        <form>
+            <input list="brs" name="brws">
+            <datalist id="brs">
+                <option value="edge">엣지</option>
+                <option value="crome">크롬</option>
+                <option value="safary">사파리</option>
+                <option value="opera">오페라</option>
+            </datalist>
+        </form>
+
+    </body>
+</html>

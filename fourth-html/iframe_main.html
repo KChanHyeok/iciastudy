@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Js 프레임 워크 강좌 사이트</title>
+    </head>
+    <body>
+        <h3>iframe을 사용한 공간 분할</h3>
+        <div style="background-color: yellow;">
+            <span>
+                <a href="WebContent/iframe_intro.html" target="if_a">인사말</a> 
+            </span>
+            <span>
+                <a href="WebContent/iframe_lecture.html" target="if_a">강의 소개</a> 
+            </span>
+            <span>
+                <a href="WebContent/iframe_info.html" target="if_a">강사소개</a> 
+            </span>
+            <span>
+                <a href="http://icia.co.kr" target="if_b">교육원 홈페이지</a> 
+            </span>
+        </div>
+        <p/>
+        <iframe src="iframe_basic.html" width="300" height="200" name="if_a"
+            frameborder="4"></iframe>
+        <iframe src="/pre_exam.html" width="300" height="200" name="if_b"
+            scrolling="auto"></iframe>
+    </body>
+</html>

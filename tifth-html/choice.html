@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>단일 선택과 다중 선택</title>
+    </head>
+    <body>
+       <h2>단일 선택</h2>
+       <form>
+            <h3>당신의 성별은?</h3>
+            <label for="man">남성</label>
+            <input id="man" type="radio" name="gender" value="M">
+            <label for="woman">여성</label>
+            <input id="woman" type="radio" name="gender" value="W"><br>
+            <input type="submit" value="전송">
+       </form> 
+       <hr>
+       <form>
+            <fieldset>
+                <legend>지금 먹고 싶은 음식은?</legend>
+                <input type="radio" name="food" value="짜장면">짜장면<br>
+                <input type="radio" name="food" value="울면">울면<br>
+                <input type="radio" name="food" value="탕수육">탕수육<br>
+                <input type="submit" value="전송">
+            </fieldset>
+       </form>
+       <hr>
+       <h2>다중 선택</h2>
+       <form>
+            <fieldset>
+                <legend>좋아하는 반려동물은</legend>
+                <input type="checkbox" name="pet" value="cat">고양이<br>
+                <input type="checkbox" name="pet" value="dog">강아지<br>
+                <input type="checkbox" name="pet" value="bird">새<br>
+                <input type="checkbox" name="pet" value="rabbit">토끼<br>
+                <input type="submit" value="전송">
+            </fieldset>
+       </form>
+    </body>
+</html>
