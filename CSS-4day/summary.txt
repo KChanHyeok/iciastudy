@@ -17,6 +17,12 @@ overflow : 넘침, 범람하다..
     컨텐츠가 텍스트일 경우 auto, 이미지일 경우 hidden
 
 float : 요소의 위치를 지정하는 방법
+    float의 뜻 - 부동(떠 다님).
+    속성값 - left, right.
+
+    Clear : 요소의 float 속성을 지우는 속성.
+        float를 left로 설정했으면 clear도 left로 설정.
+        both : 방향을 고려하지 않고 둘 다 지우는 속성값
 
 
 display
