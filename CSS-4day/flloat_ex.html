@@ -8,9 +8,34 @@
                 float: left;
                 margin-right: 10px;
             }
+            .container>div {
+                width: 250px;
+                padding: 15px;
+                float: right;
+            }
             .p1 {
                 padding: 5px;
                 border: 1px solid black;
+                /* overflow: auto; */
+            }
+            .p1::after, div::after { /* clearfix*/
+                content: '';
+                clear: both;
+                display: table;
+            }
+            .d1 {
+                background-color: yellowgreen;
+            }
+            .d2 {
+                background-color: skyblue;
+            }
+            .d3 {
+                background-color: orange;
+            }
+            .d4 {
+                width: 500px;
+                height: 100px ;
+                background-color: aquamarine;
             }
         </style>
     </head>
@@ -28,5 +53,12 @@
             float 속성은 웹 문서의 레이아웃을 설계하는데
             많이 사용돠는 속성입니다.
         </p>
+        <hr>
+        <div class="container">
+            <div class="d1">1번</div>
+            <div class="d2">2번</div>
+            <div class="d3">3번</div>
+        </div>
+        <div class="d4">4번</div>
     </body>
 </html>

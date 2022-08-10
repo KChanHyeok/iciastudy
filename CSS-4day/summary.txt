@@ -24,5 +24,16 @@ float : 요소의 위치를 지정하는 방법
         float를 left로 설정했으면 clear도 left로 설정.
         both : 방향을 고려하지 않고 둘 다 지우는 속성값
 
+  * clearfix 방식 - 요소의 앞(before) 또는 뒤(after)에
+        float를 제거하는 가상의 박스를 추가하는 방식.
+        float의 오류를 제어하는 데 많이 사용되는 방식임.
 
-display
+    float 사용은 주의가 필요함. 문서를 여러 영역으로 분할하고
+    각 영역별로 float를 사용하는 방식을 추천함.(clearfix도 활용.)
+
+
+display(and visiblity)
+
+transform (모양 변환)
+
+transition (변환 시 효과 주기 - 속도)
