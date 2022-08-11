@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>연산자(Operation)</title>
+    </head>
+    <!-- body -->
+    <body>
+        
+    </body>
+    <!-- script -->
+    <script>
+        /*
+            연산자 : 프로그램을 만들 때 변수나 값의 연산을 위해 사용되는 부호
+
+            (1) 연산자의 종류
+             + : 더하기
+             - : 빼기
+             * : 곱하기
+             / : 나누기
+
+             % : 나머지
+             ++ : 증가
+             -- : 감소
+
+        */
+
+        var a = 3;
+        var b = 1.5;
+        var c = a * b; 
+
+        // console창에 a, b, c 출력해보기!
+        console.log('a : '+ a)
+        console.log('b : '+ b)
+        console.log('c : '+ c)
+        
+        // %, ++, --
+        // 7 나누기 3 => 몫 2, 나머지 1
+        // 7 % 3 => 1
+
+        var d = 7;
+        var e = 3;
+        var f = d % e;
+        // ++ : 변수에 1씩 더하는 것
+        d++
+        console.log("7 % 3 = "+f)
+        console.log("d++를 실행 한 후 d의 값 : " + d)
+        // -- : 변수에 1씩 빼는 것
+        e--
+        console.log("e--를 실행 한 후 e의 값 : " + e)
+
+        // (2) 자바스크립트에 내장된 수학 함수
+        //  Math.sqrt(z)    : z에 대한 제곱근
+        //  Math.abs(y-x)   : y에서 X를 뺸 값의 절대값
+        //  z.toFixed(2)    : z를 소수점 2자리까지만 표사
+        //  parseInt(y)     : y를 소수점을 버리고 정수로 출력
+        
+        // Q1. C에 대한 원주율
+        // Q2. b-a의 절대값
+        // Q3. c의 소수점 2자리까지 표시
+        // Q4. b를 정수로 표시
+        // console.log()를 사용해서 출력해보기
+
+
+        console.log("C에 대한 제곱근 "+Math.sqrt(c))
+        console.log("b-a의 절대값 "+Math.abs(b-a))
+        console.log("c의 소수점 2자리까지 표시 " + c.toFixed(2))
+        console.log("b를 정수로 표시 "+parseInt(b))
+
+
+
+
+    </script>
+</html>
