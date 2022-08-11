@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>조건연산자</title>
+    </head>
+    <!-- body -->
+    <body>
+        
+    </body>
+    <!-- script -->
+    <script>
+        // 조건(삼항)연산자
+        // (조건식) ? 참(true)일때 값 : 거짓(false)일때 값 ;
+
+        // var a = 2
+        // var b = 3
+        // var result = (a%2==0) ? "짝수이다.":"홀수 이다"
+        // console.log(result)
+        var dhAge = 34
+        var jbAge = 28
+
+        var result;
+        result = (dhAge<jbAge) ? 'O':'X';
+        console.log("result : " + result)
+        console.log("result타입 : " + typeof(result))
+
+        result = (dhAge>jbAge) ? 0 : 1 ;
+        console.log("result : " + result)
+        console.log("result타입 : " + typeof(result))
+
+        var num = 10
+        var resultEven;
+        // Q. 조건연산자를 사용해서 num이 짝수인 경우에는 true 출력
+        //  num이 홀수인 경우에는 false를 출력하는 조건연산자를 작성!
+        
+        resultEven = (num%2==0) ? true:false
+        console.log("resultEven : " + resultEven)
+        console.log("resultEven타입 : "+ typeof(resultEven))
+        document.write("<h2>resultEven : " + resultEven + "</h2>")
+        document.write("<h2>resultEven타입 : "+ typeof(resultEven) + "</h2>")
+
+
+    </script>
+</html>

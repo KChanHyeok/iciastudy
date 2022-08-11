@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- head -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>논리연산자</title>
+    </head>
+    <!-- body -->
+    <body>
+        
+    </body>
+    <!-- script -->
+    <script>
+        /*
+            - 논리연산자 : AND연산, OR연산, NOT연산
+            - 논리형 데이터(true / false) 연산
+
+            [1] AND연산 : &&
+            - A && B 알땨
+            - A B가 모두 true일때 결과는 true
+            - A나 B중에 하나라도 false가 있으면 결과는 false
+
+            [2] OR연산 : ||
+            - A || B 일때
+            - A B중 하나라도 true가 있으면 결과는 true
+            - A B중 모두 false일때 결과는 false
+
+            [3] NOT연산 : !
+            - !A 일때
+            - A가 true면 결과는 false
+            - A가 false면 결과는 true
+
+
+        */
+
+        var result 
+        result = true && true //true
+        console.log("true && true : "+ result)
+        result = false && true //false
+        console.log("false && true : " + result)
+        result = true && false //false
+        console.log("true && false : "+ result)
+        result = false && false //false
+        console.log("false && false : "+ result)
+        
+        result = true || true //true
+        console.log("true || true : " + result)
+        result = true || false //true
+        console.log("true || false : " + result)
+        result = false || true // true
+        console.log("false || true : " + result)
+        result = false || false //false
+        console.log("false || false : " + result)
+        
+        result = (5>3) && (3<2); // true && false =  false
+        console.log("(5>3) && (3<2) : " + result)
+
+        result = (5>3) || (3<2); // true || false = true
+        console.log("(5>3) || (3<2) : " + result)
+
+        result = !true;   //false
+        console.log("!true : " + result)
+
+        result = !false;  //true
+        console.log("!false : " + result)
+
+        result = !!false;
+        console.log("!!false : " + result)
+        
+        result = !!true;
+        console.log("!!true : " + result)
+    </script>
+</html>
