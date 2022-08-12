@@ -69,6 +69,28 @@
         }
 
         */
+        // 시험점수(score) 변수를 만들고 점수를 입력한다.
+        // 내 시험점수가 90점 이상이면 "'A'학점 입니다." 출력
+        // A : 90~100
+        // B : 80~89
+        // C : 70~79
+        // D : 60~69
+        // F : 60미만
+        
+        var score = prompt("점수를 입력해주세요")
+
+        if(90<=score) { // 90 ~ 100
+            console.log("'A' 학점 입니다.")
+        } else if(80<=score) { // 80 ~ 89
+            console.log("'B' 학점 입니다.")
+        } else if(70<=score) { // 70 ~ 79
+            console.log("'C' 학점 입니다.")
+        } else if(60<=score) { // 60 ~ 69
+            console.log("'D' 학점 입니다.")
+        } else { // 60점 미만
+            console.log("'F' 학점 입니다.")
+        }
+        console.log(score)
 
     </script>
 </html>
