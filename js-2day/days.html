@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>월별 날짜 구하기</title>
+    </head>
+    <!-- body -->
+    <body>
+        <fieldset>
+            <legend>해당월의 날짜 구하기</legend>
+            <h3>구하려고 하는 월(Month)을 입력해주세요</h3>
+            <form onsubmit="return false">
+                <input type="text" id="month">
+                <input type="submit" value="입력" onclick="input1()">
+            </form>
+            <h1 id="result"></h1>
+            <!-- 
+                xx월은 xx일까지 있습니다.
+             -->
+        </fieldset>
+    </body>
+    <!-- script -->
+    <script>
+        function input1() {
+            var month = document.getElementById('month').value
+            var result = document.getElementById('result')
+
+            switch(month) {
+                case '2' :
+                    day=28
+                    break;
+                case '1' :
+                case '3' :
+                case '5' :
+                case '7' :
+                case '8' :
+                case '10' :
+                case '12' :
+                    day = 31
+                    break;
+                case '4' :
+                case '6' :
+                case '9' :
+                case '11' :
+                    day = 30
+                    break;    
+
+                default :
+                    result.innerHTML = "잘못입력하셨습니다 다시 입력해주세요"
+                }
+                if(month>=1 && month<=12){
+                    result.innerHTML = month + "월은 " + day + "일입니다"
+                }
+
+
+            // switch(parseInt(month)) {
+            //     case 1 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 2 :
+            //         result.innerHTML=month+"월은 28일입니다"
+            //         break;
+            //     case 3 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 4 :
+            //         result.innerHTML=month+"월은 30일입니다"
+            //         break;
+            //     case 5 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 6 :
+            //         result.innerHTML=month+"월은 30일입니다"
+            //         break;
+            //     case 7 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 8 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 9 :
+            //         result.innerHTML=month+"월은 30일입니다"
+            //         break;
+            //     case 10 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;
+            //     case 11 :
+            //         result.innerHTML=month+"월은 30일입니다"
+            //         break;
+            //     case 12 :
+            //         result.innerHTML=month+"월은 31일입니다"
+            //         break;    
+            //     default :
+            //         result.innerHTML="잘못입력하셨습니다 다시 입력해주세요"
+            // }
+            // document.getElementById('month').value=""
+        }
+
+    </script>
+</html>
