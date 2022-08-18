@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <!-- head -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>별찍기 예제</title>
+    </head>
+    <!-- body -->
+    <body>
+        
+    </body>
+    <!-- script -->
+    <script>
+        /*
+            중첩 for문 사용
+
+            출력결과
+            *
+            **
+            ***
+            ****
+
+            위와 같이 나오도록 작성하시오
+        */
+        // var star = ''
+        // for(var i=1; i<=5; i++) {
+        //     star+='*'
+        //     console.log(star)
+        // }
+        
+        // var star = ''
+        //     for(var i=1; i<=5; i++){
+        //         for(var j=1; j<=i; j++){
+        //             star += '*'
+        //         }
+        //             star+='\n'
+        //     }
+        //     console.log(star)
+
+
+         //반대로
+            for(var i=5; i>=1; i--){
+                for(var j=1; j<=i; j++){
+                    document.write('*') 
+                }
+                document.write('<br>')
+            }
+        
+        // var star=''
+        // for(var i=1; i<=4; i++){
+        //     for(var j=1; j<=5-i; j++){
+        //         star+='*'
+        //     }
+        //     star+='<br>'
+        // }
+        // document.write(star)
+
+
+        // var star = ''
+        //     for(var i=1; i<=10; i++){
+        //         if(i<=5) {
+        //             for(var j=1; j<=i; j++){
+        //                 star += '*'
+        //             }
+        //                 star+='<br>'
+        //         }else {
+        //             for(var j=10; j>i; j--){
+        //                 star += '*'
+        //             }
+        //                 star+='<br>'
+        //             }
+        //         }
+        //         document.write(star)
+
+        
+
+        
+    </script>
+</html>
