@@ -23,7 +23,7 @@
         // 자신만의 고유한 특성과 행동을 지니며, 다른 객체들과 상호작용을 한다.
 
         // 객체를 만드는 방법, object를 선언하는 방법
-        // (1) var object1 = {};
+        // (1) var object1 = { key : value };
         // (2) var object2 = new Objeck();
 
         // 자동차(car) 객체(object) 만들기!
@@ -58,6 +58,19 @@
         person["name"] = "강찬혁"
         person["age"] = 24
         person["phone"] = "010-9960-0464"
+
+        console.log(person)
+
+
+        var txt = ""
+        for(var i in person){
+            console.log("i : " + i)
+            console.log("value : " + person[i]);
+            txt += i + " : " + person[i] + "<br>";
+
+            var person1 = document.getElementById('person1')
+            person1.innerHTML=txt
+        }
 
         
 

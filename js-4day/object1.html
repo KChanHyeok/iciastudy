@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.18'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>Object 예제</title>
+   </head>
+
+   <!-- body -->
+   <body>
+
+   </body>
+
+   <!-- script -->
+   <script>
+
+        // object 생성
+        // 계좌! (account) 객체 만들기!
+        var account = {};
+        
+        // key값 추가
+        account.balance = 0;
+
+        // 객체의 함수 생성
+        // (1) 입금 함수
+        account.deposit = function(amount){
+            this.balance +=amount;  // this.balance => 객체의 key가 balance인 것을 의미
+            // this.balance += amount;
+            // this.balance = this.balance + amount;
+            // 현재잔액 = 기존잔액 + 입금액(양)
+        }
+
+        // (2) 출금 함수
+        account.withdraw = function(amount){
+            // 내가 가진 금액보다 출금액이 클경우
+            // '잔액이 부족합니다' 라는 메세지가 뜨고
+            // 잔액이 더 클 경우에만 출금이 되도록 프로그램 완성하시오 
+            if(amount>this.balance){
+                alert('잔액이 부족합니다 현재 잔액은'+this.balance+"입니다")
+            }else {
+                this.balance -= amount;
+            }
+        }
+
+        // (3) 잔액조회 함수
+        account.toString = function(){
+            console.log("현재잔액 : " + this.balance)
+        }
+
+
+// ================================================================================================
+
+        // Object 사용
+        // (1) 계좌 생성시 10,000원으로 시작한다.
+        account.balance = 10000;
+
+        // (2) 10,000원을 입금!
+        account.deposit(10000)   // 20000
+        
+        // (3) 5,000원 출금!
+        account.withdraw(5000)  // 15000 
+
+        // (4) 잔액조회
+        account.toString()
+        
+
+   </script>
+</html>
