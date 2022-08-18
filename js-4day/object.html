@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content=''>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>객체(Object)</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <h3 id="car1"></h3>
+        <h3 id="person1"></h3>
+   </body>
+
+   <!-- script -->
+   <script>
+        // 객체(Object) : 다른 것과 식별이 가능한 것
+        // 자신만의 고유한 특성과 행동을 지니며, 다른 객체들과 상호작용을 한다.
+
+        // 객체를 만드는 방법, object를 선언하는 방법
+        // (1) var object1 = {};
+        // (2) var object2 = new Objeck();
+
+        // 자동차(car) 객체(object) 만들기!
+        var car = {
+            name : "Model S",
+            company : "Tesla",
+            color : "black",
+            type : "electric"
+        };
+
+        
+        // myCar 객체!
+        
+        var myCar = {
+            name : "그랜저",
+            company : "현대",
+            color : "black",
+            type : "gasoline",
+            door : 4
+        };
+        
+        
+        car.number = 4567 
+        console.log(myCar);
+        console.log(car);
+        
+        var car1 = document.getElementById('car1')
+        car1.innerHTML=car.name
+
+        //  사람 객체 생성
+        var person = new Object();
+        person["name"] = "강찬혁"
+        person["age"] = 24
+        person["phone"] = "010-9960-0464"
+
+        
+
+
+   </script>
+</html>
