@@ -13,7 +13,6 @@
 
    <!-- body -->
    <body>
-
    </body>
 
    <!-- script -->
@@ -39,7 +38,16 @@
         account.withdraw = function(amount){
             // 내가 가진 금액보다 출금액이 클경우
             // '잔액이 부족합니다' 라는 메세지가 뜨고
-            // 잔액이 더 클 경우에만 출금이 되도록 프로그램 완성하시오 
+            // 잔액이 더 클 경우에만 출금이 되도록 프로그램 완성하시오!
+
+            // 잔액 : this.balance
+            // 출금액 : amount
+
+            // 잔액 부족할 때 : this.balance < amount
+            // if문을 사용
+
+            // 잔액이 더 클 때
+            // else문 사용
             if(amount>this.balance){
                 alert('잔액이 부족합니다 현재 잔액은'+this.balance+"입니다")
             }else {

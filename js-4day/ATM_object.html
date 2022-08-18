@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.18'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>ATM</title>
+       <style>
+        div {
+            margin: auto;
+            width: 400px;
+            text-align: center;
+        }
+        #amount {
+            width: 290px;
+            height: 50px;
+            margin-bottom: 25px;
+            font-size: 25px;
+        }
+        #amount::placeholder {
+            font-size: 25px;
+        }
+        .clickBox {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .keyboad {
+            width: 300px;
+            box-sizing: border-box;
+        }
+        .number {
+            width: 100px;
+            height: 100px;
+            float: left;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+       </style>
+   </head>
+
+   <!-- body -->
+   <body>
+        <fieldset style="width: 400px;">
+            <legend style="text-align: center;"><img src="/image/atm.png" width="100px"></legend>
+            <div>
+                <input type="text" id="amount" placeholder="금액을 입력하세요"><br>
+                <div class="keyboad">
+                    <div class="number" onclick="amount.value+='1'"><h1>1</h1></div>
+                    <div class="number" onclick="amount.value+='2'"><h1>2</h1></div>
+                    <div class="number" onclick="amount.value+='3'"><h1>3</h1></div>
+                    <div class="number" onclick="amount.value+='4'"><h1>4</h1></div>
+                    <div class="number" onclick="amount.value+='5'"><h1>5</h1></div>
+                    <div class="number" onclick="amount.value+='6'"><h1>6</h1></div>
+                    <div class="number" onclick="amount.value+='7'"><h1>7</h1></div>
+                    <div class="number" onclick="amount.value+='8'"><h1>8</h1></div>
+                    <div class="number" onclick="amount.value+='9'"><h1>9</h1></div>
+                    <div class="number" onclick="amount.value+='0'" style="width: 50%;"><h1>0</h1></div>
+                    <div class="number" onclick="amount.value=''" style="width: 50%; margin-bottom: 50px;"><h1>지우기</h1></div>
+                </div>
+                <h2 id="message"></h2>
+                <img class="clickBox" src="/image/deposit.png" alt="입금" width="80px" onclick="account.deposit(amount.value)">
+                <img class="clickBox" src="/image/withdrawal.png" alt="출금" width="73px" onclick="account.withdraw(amount.value)">
+                <img class="clickBox" src="/image/coin-stack (1).png" alt="조회" width="80px" onclick="account.toString()">
+            </div>
+        </fieldset>
+   </body>
+
+   <!-- script -->
+   <script>
+        var account={}
+        var message = document.getElementById('message')
+
+        account.balance=10000
+        
+        account.deposit = function(amount){
+            if(!amount){
+                alert('입금할 금액을 입력하세요')
+            }else{
+                this.balance +=Number(amount);  
+                message.innerHTML="================<br>"+amount+"원 입금되었습니다"
+                setTimeout(()=> {
+                    message.innerHTML=''
+                },2000)
+            }
+            document.getElementById('amount').value=''
+        }
+
+        account.withdraw = function(amount){
+            if(!amount) {
+                alert('출금할 금액을 입력하세요') 
+            }else{
+                if(amount>this.balance){
+                    alert( Number(amount)-this.balance + "원 부족합니다")
+                }else {
+                    this.balance -= Number(amount);
+                    message.innerHTML="================<br>"+amount+"원 출금되었습니다"
+                    setTimeout(()=> {
+                        message.innerHTML=''
+                },2000)
+                }
+            }
+            document.getElementById('amount').value=''
+        }
+        account.toString = function(){
+            message.innerHTML="================<br>현재금액은"+this.balance+"원 입니다"
+            setTimeout(()=> {
+                message.innerHTML=''
+                },5000)
+            document.getElementById('amount').value=''
+        }
+   </script>
+</html>
