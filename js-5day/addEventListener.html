@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.19'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>addEventListener</title>
+       <style>
+            div {
+                width: 250px;
+                height: 250px;
+                background-color: black;
+                text-align: center;
+            }
+       </style>
+   </head>
+        <h3 id="msg">FOCUS NULL</h3>
+        <input type="text" id="txtInput">
+        <p id="warnning"></p>
+        <br>
+
+        <div id="box" onmou>
+
+        </div>
+   <!-- body -->
+   <body>
+
+   </body>
+
+   <!-- script -->
+   <script>
+    /*
+        addEventListener : event를 깔끔하게 작업하기 위해 사용
+        
+        사용법 :
+        document.addEventListener(event, function)
+        event - 사용할 이벤트, function - 함수이름
+    */
+
+   var txtInput = document.getElementById('txtInput')
+
+   txtInput.addEventListener('focusin', fcsin)
+   txtInput.addEventListener('focusout', fcsout)
+
+   var msg = document.getElementById('msg')
+   var warnning = document.getElementById('warnning')
+
+   function fcsin(e) {
+        msg.innerHTML = "FOCUS IN!"
+        txtInput.style.backgroundColor="lightseagreen"
+    }
+    function fcsout(e) {
+        msg.innerHTML = "FOCUS OUT!"
+        txtInput.style.backgroundColor="lightskyblue"
+        if(!e.target.value) {
+            warnning.innerHTML="아이디를 입력해주세요"
+            warnning.style.color="red"
+        }else {
+            warnning.innerHTML="사용가능합니다."
+            warnning.style.color="yellowgreen"
+        }
+   }
+   var box = document.getElementById("box")
+    // (1) 클릭했을때 발생하는 이벤트
+    // (2) 더블(dbl)클릭 했을때 발생하는 이벤트
+    // (3) 마우스가 영역 안으로 들어왔을때 발생하는 이벤트
+    // (4) 마우스가 영역 밖으로 나갔을때 발생하는 이벤트
+
+    box.addEventListener('mouseover', function mouseover() {
+        box.style.backgroundColor="hotpink"
+        box.innerHTML="마우스가 안으로 들어왔다!"
+        box.style.color="white"
+    }) 
+    box.addEventListener('mouseout', function mouseover() {
+        box.style.backgroundColor="red"
+        box.innerHTML="마우스가 나갔다!"
+        box.style.color="white"
+    }) 
+    box.addEventListener('click', function mouseover() {
+        box.style.backgroundColor="skyblue"
+        box.innerHTML="마우스가 클릭했다!"
+        box.style.color="white"
+    }) 
+    box.addEventListener('dblclick', function mouseover() {
+        box.style.backgroundColor="blue"
+        box.innerHTML="마우스가 더블클릭했다!"
+        box.style.color="white"
+    })
+
+
+   </script>
+</html>

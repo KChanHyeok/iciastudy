@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.19'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>Event</title>
+       <style>
+        #mouse {
+            width: 250px;
+            height: 250px;
+            background-color: tomato;
+            border: 1px solid black;
+        }
+       </style>
+   </head>
+
+   <!-- body -->
+   <!-- <body onload="alert('로딩완료!')"> -->
+    <body>
+        <div id="mouse" onmouseover="mouseEvent('over')" onmouseout="mouseEvent('out')">
+
+        </div>
+        <br>
+
+        <fieldset>
+            <legend>현재시간 구하기</legend>
+            <h3 id="now"></h3>
+            <button onclick="getNow()">현재시간</button>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Key Event</legend>
+            <input type="text" id="keyevt" onkeydown="keyEvent('down')" onkeyup="keyEvent('up')" onchange="keyEvent('change')">
+            <h2 id="typing"></h2>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>selec & option</legend>
+            <!-- Q. ol과 ul의 짝꿍은 누구인가요? li이다 -->
+            <select onchange="changeSelect()" id="myObj">
+                <option>과목선택</option>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+                <option>JQuery</option>
+            </select>
+            <h2 id="result"></h2>
+        </fieldset>
+   </body>
+
+   <!-- script -->
+   <script>
+    function mouseEvent(evt) {
+        if(evt=='over'){
+            document.getElementById('mouse').innerHTML = "mouse over!!"
+        } else {
+            document.getElementById('mouse').innerHTML = "mouse out!!"
+        }
+        
+    }
+    //  날짜 출력
+    function getNow() {
+        var date = new Date();
+        document.getElementById('now').innerHTML=date
+    }
+    // 키 이벤트
+    function keyEvent(evt) {
+        // if(evt=='down'){
+            // document.getElementById('typing').innerHTML = "<h2>keyDown</h2>"
+        // }else {
+            // document.getElementById('typing').innerHTML = "<h2>keyup</h2>"
+            // var msg = document.getElementById('keyevt').value;
+            // document.getElementById('typing').innerHTML= msg
+        // }
+        if(evt=='up') {
+            var id = document.getElementById('keyevt').value
+
+            if(id=='icia'){
+                document.getElementById("typing").innerHTML = "이미 사용중인 아이디 입니다."
+            }else {
+                document.getElementById("typing").innerHTML = "사용가능한 아이디 입니다."
+            }
+        }
+        if(evt=='change') {
+            
+        }
+    }
+    // 변화 이벤트
+    function changeSelect() {
+        var myObj = document.getElementById('myObj').value
+        var result = document.getElementById('result')
+        result.innerHTML=myObj
+    }
+
+    /*
+        (1) onload : 브라우저가 모든 페이지를 로딩한 후 실행
+        (2) onmouseover : 마우스가 영역 위로 올라왔을 경우 실행
+        (3) onmouseout : 마우스가 영역 밖으로 벗어났을 경우 실행
+        (4) onclick : 마우스를 크릭했을 경우 발생
+        (5) onckeydown : 키보드의 키가 눌렸을 경우 발생 
+        (6) onkeyup : 눌린 키가 떨어졌을 경우 발생
+        (7) onchange : 해당 요소에서 변화가 있을 경우 발생
+
+    */
+   </script>
+</html>
