@@ -32,7 +32,7 @@
         
         // adEventListener에서 함수이름이 아닌 함수를 바로 작성할 수도 있다.
         owin.addEventListener("click", function(){
-            mwin = window.open('screenSize.html', 'myWindow', 'width=500, height=300')
+            mwin = window.open('http://daum.net', 'myWindow', 'width=500, height=300')
             // window.open("팝업 주소", "팝업창 이름", "팝업창 설정")
         })
 
@@ -43,7 +43,7 @@
         rwin.addEventListener("click", function(){
             // mwin.resizeTo(500, 500) //크기를 500x500으로 고정
             mwin.resizeBy(100,100)
-            mwin.focus()
+            // mwin.focus()
         })
         
         
