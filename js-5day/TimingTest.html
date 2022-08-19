@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.19'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>5초후 다음페이지로 이동</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <h2><span id="time"></span>초 후에 다음홈페이지로 이동합니다.</h2>
+   </body>
+
+   <!-- script -->
+   <script>
+        var time = document.getElementById('time')
+        var x = 5
+        var myTime
+        time.innerHTML=x
+        myTime=setInterval(function() {
+            if(x==0){
+                clearInterval(myTime)
+                alert("페이지가 이동합니다.")
+                location.href='http://daum.net'
+            }else{
+                x--
+                time.innerHTML=x
+            }
+        },1000)
+   </script>
+</html>

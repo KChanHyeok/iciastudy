@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.19'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>마우스 위치</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <h2>mouse position(브라우저 client) => <span id="pos1"></span></h2>
+        <h2>mouse position(모니터 screen) => <span id="pos2"></span></h2>
+   </body>
+
+   <!-- script -->
+   <script>
+        
+        // 브라우저 기준 : client
+        // 모니터 기준 : screen
+        
+        document.addEventListener('mousemove', mouseMove)
+
+        function mouseMove(e) {
+            document.getElementById('pos1').innerHTML = "X : " + e.clientX + " / Y : " + e.clientY 
+            document.getElementById('pos2').innerHTML = "X : " + e.screenX + " / Y : " + e.screenY
+        }
+   </script>
+</html>
