@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.22'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>글자 색</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <h1 id="elem">글자 색상이 변경 된다.</h1>
+        <button id="btn">색상변경</button>
+   </body>
+
+   <!-- script -->
+   <script>
+        var elem = document.getElementById('elem') 
+        var btn = document.getElementById('btn')
+        var fColor = ['red','blue','skyblue','hotpink','green','yellow','yellowgreen']
+        
+        var i = -1
+
+        btn.addEventListener('click', function() {
+            setInterval(() => {
+                i++
+                //만약에 i가 fColor배열의 크기만큼 증가했을때
+                if(i==fColor.length){
+                    i = 0;  // i값을 0으로 설정한다.
+                }
+                elem.style.color=fColor[i]
+    
+                // var randomNum = parseInt(Math.random()*7)
+                // elem.style.color=fColor[randomNum]
+                // console.log(randomNum)
+            }, 500);
+        })
+   </script>
+</html>

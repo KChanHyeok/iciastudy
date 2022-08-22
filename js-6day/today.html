@@ -14,17 +14,17 @@
    <!-- body -->
    <body>
         <!-- 버튼을 클릭했을 때  today1()함수가 실행되도록 작성-->
-        <button onclick="todat1()">today</button>
+        <button onclick="today1()">today</button>
         <button onclick="time1()">time</button>
         <h1 id="result"></h1>
    </body>
 
    <!-- script -->
    <script>
-       var today = new Date();
-       var result = document.getElementById('result')
-
-    function todat1() {
+     var today = new Date();
+     var result = document.getElementById('result')
+     
+     function today1() {
         // 년(year)
         var yy = today.getFullYear()
         // 월(Month)
@@ -38,17 +38,21 @@
         result.innerHTML= yy + "년 " + mm + "월 "+ dd+ "일 " +days[day] + "요일"
     }
       function time1() {
+        var today = new Date();
         //  시간(hour)
         var hh = today.getHours()
-        hh=checkTime(hh)
         //  분(Minute)
         var mi = today.getMinutes()
-        mi=checkTime(mi)
         // 초(second)
         var ss = today.getSeconds()
+        hh=checkTime(hh)
+        mi=checkTime(mi)
         ss=checkTime(ss)
-        result.innerHTML = hh + "시 " + mi + "분 "+ ss+ "초"
 
+        document.getElementById('result').innerHTML = 
+        hh + "시 " + mi + "분 "+ ss+ "초"
+
+        setTimeout(time1, 1000);
       }
 
       function checkTime(i) {
@@ -57,5 +61,7 @@
     }
         return i
       }
+
+      // setInterval( time1, 1000);
    </script>
 </html>
