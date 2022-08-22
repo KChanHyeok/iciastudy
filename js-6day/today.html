@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.22'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>today</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <!-- 버튼을 클릭했을 때  today1()함수가 실행되도록 작성-->
+        <button onclick="todat1()">today</button>
+        <button onclick="time1()">time</button>
+        <h1 id="result"></h1>
+   </body>
+
+   <!-- script -->
+   <script>
+       var today = new Date();
+       var result = document.getElementById('result')
+
+    function todat1() {
+        // 년(year)
+        var yy = today.getFullYear()
+        // 월(Month)
+        var mm = today.getMonth()+1
+        // 일(day)
+        var dd = today.getDate()
+        // 요일(days)
+        var day = today.getDay()
+        var days = ['일','월','화','수','목','금','토']
+
+        result.innerHTML= yy + "년 " + mm + "월 "+ dd+ "일 " +days[day] + "요일"
+    }
+      function time1() {
+        //  시간(hour)
+        var hh = today.getHours()
+        hh=checkTime(hh)
+        //  분(Minute)
+        var mi = today.getMinutes()
+        mi=checkTime(mi)
+        // 초(second)
+        var ss = today.getSeconds()
+        ss=checkTime(ss)
+        result.innerHTML = hh + "시 " + mi + "분 "+ ss+ "초"
+
+      }
+
+      function checkTime(i) {
+    if(i<10) {
+        i = "0"+i
+    }
+        return i
+      }
+   </script>
+</html>
