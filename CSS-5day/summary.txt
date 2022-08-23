@@ -28,10 +28,19 @@ transform(모양 변환)
           translate(x, y) - 현재 위치에서 x, y 만큼 이동
           translateX(x) - x축으로만 이동
           translateY(y) - y축으로만 이동
-    2) 각도 변환 - rotate
-    3) 크기 변환 - scale
-    4) 기울기 변환 - skew
+    2) 각도 변환 - rotate(각도). 단위 deg
+          기본 회전 방향은 시계방향. minus수치는 반시계 방향.
+    3) 크기 변환 - scale. 단위 없음. 배수로 변환
+          scale(x, y) : 너비, 높이 둘다 변환
+          scaleX(x) : x축으로만 변환
+          scaleY(y) : y축으로만 변환
+    4) 기울기 변환 - skew (각도). 단위 deg
+          skew(deg, deg) - x축, y축 모두 기울기 변환
+          skewX(deg) - x축으로만 기울기 변환
+          skewY(deg) - y축으로만 기울기 변환
     5) 종합 변환 함수 - matrix
+          matrix(scaleX, skewY, skewX, 
+                    scaleY, translateX, translateY)
     
 transition(변환 효과-속도)
     1) 

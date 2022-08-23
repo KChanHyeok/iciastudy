@@ -10,11 +10,39 @@
                 border: 1px solid black;
                 background-color: red;
                 margin-left: 50px;
+                transition: transform 2s;
+            }
+            .b1:hover {
+                /* transform: translate(20px, -10px); */
+                transform: translateX(50px);
+            }
+            .b2 {
+                border-radius: 50%;
+                padding: 10px;
+            }
+            .b2:hover {
+                transform: rotate(-90deg);
+            }
+            .b3:hover {
+                /* transform: scale(5, 5); */
+                transform: scaleX(2);
+            }
+            .b4:hover {
+                /* transform: skew(20deg, 20deg); */
+                transform: skewY(40deg);
+                
+
             }
         </style>
     </head>
     <body>
         <h3>위치 변환</h3>
         <div class="b1"></div>
+        <h3>각도 변환</h3>
+        <div class="b2">1</div>
+        <h3>크기 변환</h3>
+        <div class="b3">1</div>
+        <h3>기울기 변환</h3>
+        <div class="b4">1</div>
     </body>
 </html>
