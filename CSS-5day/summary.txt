@@ -1,0 +1,7 @@
+파일 > 폴더열기 > CSS-5day
+flex2.html을 복사 붙여넣기 해주세요
+
+flex
+    flex item 관련 속성
+    1) flex-basis
+    

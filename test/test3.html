@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.23'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>키와 몸무게를 입력받아 비만여부 판단</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <!-- <h1>키를 입력해주세요</h1> -->
+        <!-- <input type="text" id="tall">
+        <h1>몸무게를 입력해주세요</h1>
+        <input type="text" id="weight"><br><br>
+        <input type="button" id="check" onclick="checkMe(tall.value, weight.value)" value="전송"> -->
+        <button onclick="start()">다시 입력하기</button>
+        <h1 id="result"></h1>
+   </body>
+
+   <!-- script -->
+   <script>
+    start()
+    function start() {
+        var tall = prompt('키를 입력해주세요')
+        var weight = prompt('몸무게를 입력해주세요')
+    // function checkMe(tall, weight) {}
+        var result = (Number(tall)-100) * 0.9
+        if(tall==null || weight==null || tall=="" || weight=="" || tall==" " || weight==" "){
+            alert('입력되지 않았습니다')
+            start()
+        }else {
+            if(weight>result) {
+                document.getElementById('result').innerHTML = '다이어트가 필요할 수 있습니다!<br>당신의 표준 몸무게는 '+parseInt(result)+'입니다'
+            }else {
+                document.getElementById('result').innerHTML = '표준(또는 마른) 체형입니다!<br>당신의 표준 몸무게는 '+ parseInt(result)+'입니다'
+            }
+        }
+    }
+   </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.23'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>100보다 작은 정수만 입력해라</title>
+   </head>
+
+   <!-- body -->
+   <body>
+
+   </body>
+
+   <!-- script -->
+   <script>
+    start()
+    function start() {
+        var number = prompt('100보다 작은 정수만 입력하시오')
+        if(number<=100 && 0<number){
+            document.write("<h1>"+number+"</h1>")
+        }else if(number==null || number=="" || number==" "){
+            alert('값을 입력해주세요')
+            start()
+        }else {
+            alert('100보다 큰 값 또는 0보다 작은 값을 입력하셨습니다')
+            start()
+        }
+    }
+   </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='ko'>
+   <!-- head -->
+   <head>
+       <meta charset='UTF-8'>
+       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+       <meta name='author' content='kchan'>
+       <meta name='date' content='2022.08.22'>
+       <link rel='shortcut icon' href='image/catlogo2.ico'>
+       <title>입력한 값 보여주가</title>
+   </head>
+
+   <!-- body -->
+   <body>
+        <h1>당신이 입력한 값 : <span id="result"></span></h1>
+        <input type="text" id="inputText" onkeyup="keyEvent()"><span id="inputNum">(0자 입력)</span>
+   </body>
+
+   <!-- script -->
+   <script>
+    function keyEvent() {
+        var result = document.getElementById('result')
+        var inputNum = document.getElementById('inputNum')
+        var inputText = document.getElementById('inputText')
+        var txt=inputText.value;
+    
+        
+        // txt.length : 우리가 입력한 글자의 수
+        
+        if(txt.length>=0 && txt.length<=5){
+            inputNum.style.color ="black"
+        }else if(txt.length>=6 && txt.length<=9){
+            inputNum.style.color = "orange"
+        }else {
+            inputNum.style.color = "red"
+            alert("더 이상 입력할 수 없습니다.")
+            txt = txt.slice(0, 10)
+            // 0번부터 보여주고, 10번부터 자라낸다.
+            inputText.value = txt
+        }
+        result.innerHTML = txt
+        inputNum.innerHTML = "("+txt.length+"자 입력)"
+    }
+        
+
+   </script>
+</html>

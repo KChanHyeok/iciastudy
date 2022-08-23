@@ -91,6 +91,7 @@ display : flex
         baseline : 내부요소 중 큰 요소의 컨텐츠(내용)를 기준으로
                 베이스라인에 맞춤.(컨테이너 요소의 위쪽에 배치됨)
   6) align-content : 내부 요소의 수직 간격을 조정하는 속성.
+                내부 요소가 2줄 이상으로 배치되었을 경우 처리됨.
             stretch, justify-content의 6개 속성값.
 
   flex item 관련 속성
