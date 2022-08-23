@@ -39,8 +39,23 @@ transform(모양 변환)
           skewX(deg) - x축으로만 기울기 변환
           skewY(deg) - y축으로만 기울기 변환
     5) 종합 변환 함수 - matrix
-          matrix(scaleX, skewY, skewX, 
+          matrix(scaleX, skewY, skewX,
                     scaleY, translateX, translateY)
+                : 크기, 기울기, 위치 변환을 합쳐놓은 함수.
     
-transition(변환 효과-속도)
-    1) 
+transition(변환 효과-속도지연)
+  - transform, 너비/높이 변화, 배경색 변화 등과 같이 사용하여
+    요소에 간단한 애니메이션 효과를 줄 수 있음.
+    1) transition-delay : 변환 시작 시간을 지연시킴.
+    2) transition-duration : 변환 기간의 시간을 지정
+    3) transition-property : 변환하는 속성을 지정.
+    4) transition-timing-function : 변환 기간의 시간을 
+            함수로 처리
+        ease - 느린 시작, 빠른 진행, 느린 종료
+        linear - 일정한 시간(기본값)
+        ease-in - 느린 시작, 일정한 진행 및 종료
+        ease-out - 일정한 시작 및 진행 느린 종료
+        ease-in-out - 느린 시작, 일정한 진행, 느린 종료
+    5) transition : property, duration만 설정
+            쉼표로 구분하여 여러 property에 속도를 
+            지정할 수 있음.
