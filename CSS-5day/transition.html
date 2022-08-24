@@ -2,9 +2,59 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Transition</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                transition-property: width,height,background-color;
+                transition-duration: 2s, 1s, 3s;
+                transition-delay: 0.25s;
+                transition-timing-function: ease;
+            }
+            div:hover {
+                width: 300px;
+                height: 150px;
+                background-color: plum;
+                /* border-radius: 50%; */
+            }
+            p {
+                width: 100px;
+                height: 100px;
+                background-color: yellowgreen;
+                color: white;
+                font-size: 25px;
+                transition: width 1s;
+            }
+
+            p:hover {
+                width: 500px;
+            }
+            p:nth-child(1) {
+                transition-timing-function: linear;
+            }
+            p:nth-child(2) {
+                transition-timing-function: ease;
+            }
+            p:nth-child(3) {
+                transition-timing-function: ease-in;
+            }
+            p:nth-child(4) {
+                transition-timing-function: ease-out;
+            }
+            p:nth-child(5) {
+                transition-timing-function: ease-in-out;
+            }
+        </style>
     </head>
     <body>
-        
+        <div></div>
+        <hr>
+        <p class="linear">linear</p>
+        <p class="ease">ease</p>
+        <p class="easein">ease-in</p>
+        <p class="easeout">ease-out</p>
+        <p class="easeinout">ease-in-out</p>
     </body>
 </html>
