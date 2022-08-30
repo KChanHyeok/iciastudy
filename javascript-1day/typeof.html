@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        let a=100;
+        console.log("a의 값은 "+ a)
+        console.log("a의 타입은 "+ typeof(a))
+
+        a = "100";
+        console.log("a의 값은 "+ a)
+        console.log("a의 타입은 "+ typeof(a))
+
+        let arr = [1, 2, 3, 4, "5", 6] // 배열: 변수를 묶어서 사용
+        arr.forEach(function(item1, idx){
+            console.log(item1)
+            console.log(`${idx}번째 값의 타입은 ${typeof(item1)}`)
+        })
+
+        let sum = 0;
+        arr.forEach(function(item) {
+            console.log(sum)
+            sum -=item // 배열의 원소를 하나씩 꺼내서 누적.
+        })
+        console.log(sum)
+        console.log(typeof(sum))
+    </script>
+</html>

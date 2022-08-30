@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>문제</h1>
+        <p>100보다 작은 정수만을 입력받는
+            자바스크립트 프로그램을 작성하시오<br>
+            100보다 큰 정수가 입력되었을 경우 경고창을 띄우시오.<br>
+             (100 미만의 값이 입력되면 브라우저에 출력하시오.)</p>
+        <input id="nin" type="number"><button onclick="exam1()">입력</button><br>
+        <span id="nout"></span>
+        <hr>
+        <h2>문제2</h2>
+        <p>임의의 수를 입력 받아 1부터 입력받은 수까지의<br>
+            합을 브라우저에 출력하는 프로그램을 작성하시오.</p>
+        <input id="nin2" type="number">
+        <button onclick="exam2()">입력</button><br>
+        <span id="nout2"></span>
+    </body>
+    <script>
+        //출력용 span 요소를 가져와서 변수에 저장
+        const noutSpan = document.getElementById('nout') 
+        //입력용 input 요소를 가져와서 변수에 저장
+        const ninInput = document.getElementById('nin')
+        function exam1(){
+            //input 태그의 입력값을 가져오자. value의 값을 가져오자. value의 값을 가져오자
+            let inNum = Number(ninInput.value)
+            // console.log(inNum)
+            // 조건제어문(if)
+            if(inNum<100){
+                noutSpan.innerHTML ='입력한 값은 '+ inNum + '입니다'
+            }else {
+                alert(inNum+'은 100보다 큰 수입니다.');
+            }
+            ninInput.value=''
+        }
+//////////////////////////////////////////////////////////////////////////////////////////
+        //문제2용 함수
+        const in2_v = document.getElementById('nin2')
+        const out2 = document.getElementById('nout2')
+
+        function exam2() {
+            let inNum = in2_v.value;
+
+            let sum =0 //누적값 저장 변수
+
+            for(let i=1; i<=inNum; i++){
+                sum+=i
+            }  
+            out2.innerHTML=`${inNum}까지의 누적합은 ${sum}입니다.`;
+            in2_v.value = '';
+        }  
+
+
+    </script>
+</html>
