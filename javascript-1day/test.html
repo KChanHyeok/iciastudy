@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>문제</title>
+    </head>
+    <body>
+        <input type="button" value="오늘의 날짜 보기" onclick="weather()">
+        <p id="result"></p>
+
+        <p id="result1"></p>
+        <input type="button" value="+" onclick="change(+1)">
+        <input type="button" value="-" onclick="change(-1)">
+    </body>
+    <script>
+        var num =0
+
+        var weather = () => {
+            var result = document.getElementById('result')
+            var data = new Date()
+            result.innerHTML=data.getFullYear() +'년'+(data.getMonth()+1)+ '월' + data.getDate()+'일'
+        }
+        var result1 = document.getElementById('result1')
+        result1.innerHTML = num
+
+        var change = (state) => {
+            num = num + Number(state)
+            result1.innerHTML = num
+        }
+    </script>
+</html>

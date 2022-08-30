@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>오늘의 날짜 출력</h1>
+        <button onclick="getDate()">현재시간</button>
+        <span id="tout">시간 : </span>
+        <hr>
+        <button onclick="plus()">+</button>
+        <span id="num">0</span>
+        <button onclick="minus()">-</button>
+    </body>
+    <script>
+        function getDate() {
+            //함수의 영역. 전체 영역과 독립된 공간.
+            //함수는 문서가 실행될때 등록만 되고,
+            //실행되지 않는다!
+            // alert("실행했어요")
+            let d = Date() //시스템(윈도우)으로부터
+                        //시간관련 값을 구하는 객체
+            console.log(d);
+            let t_out = document.getElementById('tout')
+            t_out.innerHTML ='시간 : '+ d
+        }
+
+        let totalNum = 0; //카운터 숫자 저장 변수
+
+        function plus() {
+            //totalNum =totalNum + 1;
+            //totalNum += 1;
+            totalNum++;
+            const s_num = document.getElementById('num');
+            s_num.innerHTML = totalNum;
+        }
+        function minus() {
+            totalNum--;
+            const s_num = document.getElementById('num');
+            s_num.innerHTML = totalNum;
+        }
+        const cv = 100;
+
+        for(let i=0; i<cv; i++){
+            console.log('사은품 증정')
+        }
+        const menu1 = 50;
+        const menu2 = 60;
+        const menu3 = 70;
+        const quit = 80;
+        console.log(`${menu1}번은 첫번째 메뉴입니다`);
+        console.log(`${menu2}번은 첫번째 메뉴입니다`);
+        console.log(`${menu3}번은 첫번째 메뉴입니다`);
+        console.log(`종료는 ${quit}번 입니다`);
+
+        let menu =1
+        switch(menu) {
+            case menu1:
+                console.log('첫번째 메뉴 선택')
+                break
+            case menu2:
+                console.log('두번째 메뉴 선택')
+                break
+            case quit:
+                console.log('종료')
+                break
+        }
+    </script>
+</html>
