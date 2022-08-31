@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="res1"></p>
+        <p id="res2"></p>
+        <hr>
+        <h2>윤년 계산기</h2>
+        <p>연도를 입력하세요</p>
+        <input type="number" id="inYear">
+        <button onclick="leap()">확인</button>
+        <p>결과 : <span id="outRes"></span></p>
+    </body>
+    <script>
+        //윤년 계산기 스크립트
+        const iy = document.getElementById("inYear");
+        const or = document.getElementById("outRes");
+
+        const leap = function() {
+            let year = iy.value;
+            let t2 = (((year%4)==0) && (year%100)!=0) || (year%400)==0
+
+            let str = (t2) ? "윤년입니다." : "윤년이 아닙니다."
+            or.innerHTML = str
+            iy.value = ''
+        }
+
+
+        //비교 연산자 스크립트
+        let a = 100;
+        let b = "100";
+
+        const r1 = document.getElementById('res1')
+        const r2 = document.getElementById('res2')
+
+        r1.innerHTML = `a === b는 ${(a===b)}`
+        r2.innerHTML = `a !== b는 ${(a!==b)}`
+
+        //윤년 계산(조건 연산자 활용)
+        // 2월이 29일이 되는 년도.
+        // 4년마다 한번씩 윤년이다.
+        // 100년마다 한번씩은 윤년이 아니다.
+        // 400년마다 한번씩은 윤년이다.
+
+        // let year = 2020;
+        // let f = (year%4)==0; //윤년
+        // console.log(f);
+        // let h = !((year%100)==0); //윤년 아님
+        // console.log(h);
+        // let fh = (year%400)==0; //윤년
+
+        // let t1 = ((year%4)==0) && ((year%100)!=0)
+
+        // let t2 = (((year%4)==0) && (year%100)!=0) || (year%400)==0
+        // console.log(t2)
+        
+    </script>
+</html>

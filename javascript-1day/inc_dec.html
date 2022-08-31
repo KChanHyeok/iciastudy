@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>증가연산자(전위)</h1>
+        <p>Z : <span id="be"></span></p>
+        <p>X : <span id="af"></span></p>
+        <h1>증가연산자(후위)</h1>
+        <p>Z : <span id="be2"></span></p>
+        <p>Y : <span id="af2"></span></p>
+    </body>
+    <script>
+        const b = document.getElementById('be')
+        const a = document.getElementById('af')
+        const b2 = document.getElementById('be2')
+        const a2 = document.getElementById('af2')
+
+        let x = 10, y = 10, z = 0;
+        ++x
+        z = 5 + x;
+        b.innerHTML = z;
+        a.innerHTML = x;
+
+        z = 5 + y
+        y++
+        b2.innerHTML = z;
+        a2.innerHTML = y;
+        
+    </script>
+</html>
