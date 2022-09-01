@@ -1,0 +1,22 @@
+반복문
+
+    for
+    for in
+    for of
+    forEach()
+
+배열
+    변수의 묶음. 대표적인 순차구조의 데이터 저장방식.
+    
+    원소의 추가 : push(새값), unshift(새값)
+    원소의 삭제 : pop(), shift()
+
+    배열 메소드
+    1) splice
+    2) concat
+    3) indexOf / lastIndexOf
+    4) includes
+    5) sort
+    6) reverse
+    7) join
+    8) slice
