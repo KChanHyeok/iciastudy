@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로그인</title>
+    </head>
+    <body>
+       <fieldset style="width: 400px;">
+            <legend>로그인</legend>
+            <p>로그인 : <input type="text" id="user_id"></p>
+            <p>비밀번호 : <input type="password" id="user_password"></p>
+            <button onclick="login()">로그인</button>
+       </fieldset>
+    </body>
+    <script>
+        const user_id = document.getElementById('user_id')
+        const user_password = document.getElementById('user_password')
+
+        const a_id = "kang9kang9"
+        const a_password = 1234
+
+        
+        const login = () => {
+            const getId = user_id.value
+            const getPassword = user_password.value
+            if(getId==a_id && getPassword==a_password) {
+                alert('로그인 되었습니다')
+                location.href = 'login_comple.html'
+            }else if(getId==a_id && getPassword!=a_password){
+                alert('비밀번호가 틀립니다.')
+            }else if(getId!=a_id && getPassword==a_password){
+                alert('아이디가 틀립니다.')
+            }else {
+                alert('아이디 비밀번호 둘다 틀립니다.')
+            }
+        }
+    </script>
+</html>
