@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            .items {
+                text-align: center;
+                line-height: 50px;
+                color: white;
+                width: 50px;
+                height: 50px;
+                background-color: gray;
+                border: 1px solid black;
+                font-weight: bold;
+                margin: 5px;
+                display: inline-block;
+            }
+            .items:hover {
+                background-color: red;
+                cursor: pointer;
+            }
+            #space {
+                width: 620px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>좌석 배치도 만들기</h2>
+        <p>총 줄수 : <input type="number" id="rows"></p>
+        <p>한줄별 칸수 : <input type="number" id="cols"></p>
+        <button onclick="maker()">생성</button>
+        <div id="space">
+        </div>
+    </body>
+    <script>
+        const c = document.getElementById("cols")
+        const r = document.getElementById("rows")
+        const space = document.getElementById('space')
+
+        const maker = () => {
+            const cv = c.value //칸수
+            const rv = r.value //줄수
+            let str=""
+            let counter=1
+
+            
+            for(let j=0; j<rv; j++){
+                str += "<div>"
+                for(i=1; i<=cv; i++){
+                str+=`<div class="items" onclick="checkBox(${counter-1})">${counter}</div>`
+                counter++
+                }
+                str+="</div>"
+            }    
+            space.innerHTML=str
+        }
+        const checkBox = (num, state) => {
+            const items = document.querySelectorAll(".items")
+            // console.log(state)
+            // items[num].innerHTML="체크"
+            items[num].style.color="white"
+            items[num].style.backgroundColor="red"
+        }
+
+    </script>
+</html>

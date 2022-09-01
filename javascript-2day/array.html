@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>배열</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        let nums = [1, 2, 3, 4, 5];
+        let strs = new Array("one", "two", "three", "four");
+
+        console.log(nums);
+        console.log(strs);
+        console.log(nums[2]);
+        nums[4] = 8
+        console.log(nums)
+
+        console.log(strs[4])
+
+        let arr = [,,,,];
+        //배열의 크기(공간개수) : length
+        console.log(arr.length)
+
+        //빈 배열의 값 추가
+        //배열에 값을 넣는 방법 push
+        let fruits = []
+        fruits.push('바나나')
+        fruits.push('청포도')
+        fruits.push('포도')
+        console.log(fruits)
+
+        //배열에서 새 값을 꺼내는 방법 pop
+        fruits.pop();
+        fruits.pop();
+        console.log(fruits)
+
+        fruits.unshift("자몽")
+        console.log(fruits)
+        fruits.shift();
+        console.log(fruits)
+
+        let aArr = [1,2,3,4,5];
+        let bArr = aArr;
+        console.log(aArr)
+        console.log(bArr);
+        bArr.pop()
+        console.log(aArr)
+        console.log(bArr);
+        
+    </script>
+</html>
