@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        let arr = ["apple", "banana", "pear", "peach"]
+
+        // for in
+        for(let i in arr) {
+            // console.log(i)
+        }
+        // for of
+        for(let v of arr){
+            // console.log(v)
+        }
+        for(let i =0; i<arr.length; i++){
+            let v = arr[i]
+            // console.log(v)
+        }
+
+        let new_arr = arr.forEach(function(item, idx, array) {
+            console.log(item)
+            console.log(idx)
+            console.log(array)
+        })
+        // item, idx, array는 변수 이름 -> 마음대로 작성해도 됩니다.
+        // 함수의 '('와')' 사이에 들어가는 것을 매개 변수라고 함.
+        // 매개변수 -> 인자, 인수, 파라미터 라고도 함.
+        arr.forEach(function(item, idx) {
+            console.log(`${idx}번째 값은 ${item}이다`);
+        })
+
+
+
+        let person = {
+            "이름" : "홍길동",
+            "나이" : 20,
+            "주소" : "인천시 미추홀구"
+        }
+        for(let key in person) {
+            // console.log(`${key}는(은) ${person[key]}`)
+        }
+    </script>
+</html>

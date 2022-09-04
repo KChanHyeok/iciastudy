@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>학생점수 총합 평균구하기</title>
+    </head>
+    <body>
+        <input type="number" id="student"><button>입력</button>
+        <p>
+            <button>총합</button><button>평균</button>
+        </p>
+        <div id="su"></div>
+        <div id="ag"></div>
+        <div id="space"></div>
+
+    </body>
+    <script>
+        const students = document.getElementById('student')
+        const space = document.getElementById('space')
+        const btns = document.querySelectorAll('button')
+        
+        btns[0].addEventListener('click',function() {
+            const student = students.value
+            for(let i=0; i<student; i++){
+                let ptag = document.createElement("p");
+                let tn = document.createTextNode("학생점수 입력 : ")
+                let itag = document.createElement("input");
+                let delet = document.createElement("input");
+                delet.type="button"
+                delet.value="삭제"
+                delet.onclick=function(){de(ptag);}
+                itag.className = "nin";
+                itag.type="number"
+                space.appendChild(ptag)
+                ptag.appendChild(tn)
+                ptag.appendChild(itag)
+                ptag.appendChild(delet)
+            }
+            students.value=""
+        })
+        
+        btns[1].addEventListener('click', function() {
+            const inputs = document.querySelectorAll(".nin")
+            let sum=0;
+            for(let v of inputs){
+                sum+=Number(v.value)
+            }
+            document.getElementById('su').innerHTML=`총 점수는 ${sum}점 입니다`
+        })
+        
+        btns[2].addEventListener('click', function() {
+            const inputs = document.querySelectorAll(".nin")
+            let sum=0;
+            let age=0;
+            for(let v of inputs){
+                sum+=Number(v.value)
+                age=sum/inputs.length
+            }
+            document.getElementById('ag').innerHTML=`총 평균은 ${age}입니다`
+        })
+        const de = (e) =>{
+            e.remove()
+        }
+        
+
+
+    </script>
+</html>
