@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>가위바위보</title>
+    </head>
+    <body>
+        <fieldset style="width: 500px;">
+            <legend>가위바위보</legend>
+            <p id="computer"></p>
+            <button>가위</button>
+            <button>바위</button>
+            <button>보</button>
+            <p>
+                <button>다시시작</button>
+            </p>
+            <p id="res"></p>
+        </fieldset>
+    </body>
+    <script>
+        const computer = document.getElementById('computer')
+        const btns = document.querySelectorAll('button')
+        const res = document.getElementById('res')
+        const game = ["가위","바위","보"]
+        
+        let com = setInterval(() => {
+            comNum = Math.floor((Math.random() * 3));
+            computer.innerHTML=game[comNum]
+            }, 100);
+
+            btns[0].addEventListener('click', function() {
+                if(res.innerHTML==""){
+                    clearInterval(com)
+                    // 가위
+                    if(game[comNum]=="가위") {
+                        res.innerHTML="비겼습니다"
+                    }else if(game[comNum]=="바위") {
+                        res.innerHTML="졌습니다"
+                    }else {
+                        res.innerHTML="이겼습니다"
+                    }
+                }
+            })
+            btns[1].addEventListener('click', function() {
+                if(res.innerHTML==""){
+                    clearInterval(com)
+                    // 바위
+                    if(game[comNum]=="바위") {
+                        res.innerHTML="비겼습니다"
+                    }else if(game[comNum]=="보") {
+                        res.innerHTML="졌습니다"
+                    }else {
+                        res.innerHTML="이겼습니다"
+                    }
+                }
+            })
+            btns[2].addEventListener('click', function() {
+                if(res.innerHTML==""){
+                    clearInterval(com)
+                    // 보
+                    if(game[comNum]=="보") {
+                        res.innerHTML="비겼습니다"
+                    }else if(game[comNum]=="가위") {
+                        res.innerHTML="졌습니다"
+                    }else {
+                        res.innerHTML="이겼습니다"
+                    }
+                }
+            })
+            btns[3].addEventListener('click', function(){
+                location.reload()
+            })
+    </script>
+</html>
