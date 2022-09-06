@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 100px;
+            }
+            .st1 {
+                border: 1px solid;
+            }
+            .st2 {
+                border: 3px dashed;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+       <div>Box</div>
+       <button>변경</button>
+       <button>change</button>
+    </body>
+    <script>
+        const box = document.querySelector("div");
+        box.classList.add("st1")
+        const btns = document.querySelectorAll("button")
+        btns[0].addEventListener("click", function() {
+            // if(box.classList.contains("st1")){
+            //     box.classList.remove("st1")
+            // }else {
+            //     box.classList.add("st1")   
+            // }
+            box.classList.toggle("st1")
+            if(box.classList.contains("st2")){
+                box.classList.remove("st2")
+            }
+        })
+
+        btns[1].addEventListener("click", function() {
+            box.classList.replace("st1", "st2")
+        })
+    </script>
+</html>
