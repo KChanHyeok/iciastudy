@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>parameter</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        function add() {
+            let sum = 1
+            return sum
+        }
+        function add(x) {
+            let sum = x + 1
+            return sum
+        }
+        function add(x, y) {
+            let sum = x + y
+            return sum
+        }
+        let n1 = add();
+        let n2 = add(5);
+        let n3 = add(4, 3);
+        document.write(`합수 호출 인자 없음 : ${n1}<br>`)
+        document.write(`합수 호출 인자 1개 : ${n2}<br>`)
+        document.write(`합수 호출 인자 1개 : ${n3}<br>`)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function add2() {
+            let sum = 0;
+            for(let i of arguments) {
+                sum += i
+            }
+            return sum
+        }
+
+        let r1 = add2();
+        let r2 = add2(2);
+        let r3 = add2(5, 8);
+        let r4 = add2(1,2,3,4,5,6,7,8,9,10);
+        document.write(`함수 호출 결과: ${r1}<br>`)
+        document.write(`함수 호출 결과: ${r2}<br>`)
+        document.write(`함수 호출 결과: ${r3}<br>`)
+        document.write(`함수 호출 결과: ${r4}<br>`)
+    
+    </script>
+</html>

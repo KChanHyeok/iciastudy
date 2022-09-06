@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>야구게임</title>
+    </head>
+    <body>
+        <button id="strike">Strike</button>
+        <button id="ball">Ball</button>
+        <button id="restart" style="display:none">
+            재시작
+        </button>
+        <br />
+        B:<b id="b">0</b><br />
+        S:<b id="s">0</b><br />
+        O:<b id="o">0</b><br />
+    </body>
+    <script>
+        const strike = document.getElementById('strike')
+        const ball = document.getElementById('ball')
+        const restart = document.getElementById('restart')
+        const b = document.getElementById('b')
+        const s = document.getElementById('s')
+        const o = document.getElementById('o')
+
+
+        let strikeCount = 0
+        let ballCount = 0
+        let outCount = 0
+
+        strike.addEventListener('click',() => {
+            strikeCount++
+            if(strikeCount==3){
+                alert('삼진아웃')
+                strikeCount= 0
+                ballCount = 0
+                outCount++
+                if(outCount==3){
+                    strike.disabled=true
+                    ball.disabled=true
+                    restart.style.display ='inline'
+                }
+                o.innerHTML=outCount
+            }
+            s.innerHTML = strikeCount
+            b.innerHTML = ballCount
+        })
+        ball.addEventListener('click',() => {
+            ballCount++
+            if(ballCount==4){
+                alert('포볼!')
+                ballCount=0
+                strikeCount=0
+            }
+            b.innerHTML=ballCount
+            s.innerHTML = strikeCount
+        })
+        restart.addEventListener('click', () => {
+            strike.disabled = false
+            ball.disabled = false
+            strikeCount = 0
+            ballCount = 0
+            outCount = 0
+            restart.style.display = 'none'
+            o.innerHTML = outCount
+            s.innerHTML = strikeCount
+            b.innerHTML = ballCount
+        })
+        
+    </script>
+</html>
