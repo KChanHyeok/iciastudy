@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>주기적인 처리</h2>
+        <p><b id="num">0</b></p>
+        <button onclick="inter()">시작</button>
+        <button onclick="stop()">중지</button>
+        <p>
+            <button onclick="timeout(this)">설정</button>
+            <button onclick="cl()">제거</button>
+        </p>
+    </body>
+    <script>
+        const num = document.getElementById("num");
+        let counter=0;
+        let time;
+        function inter() {
+            clearInterval(time)
+            time =setInterval(() => {
+            counter++
+            num.innerHTML=counter
+            }, 1000);
+        }
+        
+        function stop() {
+            counter=0
+            clearInterval(time)
+            num.innerHTML=counter
+        }
+
+        let to;
+        function timeout(em) {
+            em.disabled=true
+            to = setTimeout(function(){
+                alert("3초 경과");
+                em.disabled=false
+            }, 3000)
+        }
+        function cl() {
+            clearTimeout(to)
+        }
+    </script>
+</html>
