@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>크리스마스</title>
+    </head>
+    <body>
+       <h1> 크리스마스까지 앞으로 <span id="day"></span></h1> 
+    </body>
+    <script>
+
+        coutDownTimer('12/25/2022 00:00 AM', 'day')
+
+        function coutDownTimer(dt, id) {
+            let end = new Date(dt);
+
+            let _second = 1000;
+            let _minute = _second * 60;
+            let _hour = _minute * 60;
+            let _day = _hour * 24;
+            let timer;
+
+            function showRemaining() {
+                let now = new Date();
+                let distance = end - now;
+                if(distance < 0 ) {
+                    clearInterval(timer);
+                    document.getElementById(id).innerHTML='EXPIRED!';
+
+                    return;
+                }
+                let days = Math.floor(distance/ _day);
+                let hours = Math.floor((distance%_day)/ _hour);
+                let minutes = Math.floor((distance% _hour)/ _minute);
+                let second = Math.floor((distance%_minute) /_second);
+
+                document.getElementById(id).innerHTML = days+ '일 ';
+                document.getElementById(id).innerHTML += hours+ '시간 ';
+                document.getElementById(id).innerHTML += minutes+ '분 ';
+                document.getElementById(id).innerHTML += second+ '초 ';
+            }
+            timer = setInterval(showRemaining, 1000);
+        }
+    </script>
+</html>
