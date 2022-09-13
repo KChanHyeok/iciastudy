@@ -60,6 +60,40 @@ URL(Uniform Resource Locator) = 페이지
                 함수 안에서 작성한다.
     범위(Scope)는 '{','}'로 둘러싸여 있는 영역을 말함.
 
+예제)
 Date 객체를 활용하여 1초 단위로 시간을 출력하는
-시계를 만드세요
+시계를 만드세요~
+
+    Date 객체의 메소드
+    1) 연도 : getFullYear()
+    2) 월 : getMonth()
+    3) 일 : getDate() - 1달 중 몇번째 일
+            getDay() - 1주 중 몇번째 일(일요일:0, 토요일:6)
+    4) 시 : getHours() - 0~23(24시간 주기)
+    5) 분 : getMinutes() - 0~59
+    6) 초 : getSecond() - 0~59
+    7) 밀리초 : getMillisecond() - 0~999
+
+String(문자열) 관련 함수 : padStart(n, "str");
+            n : 숫자. 자릿수 
+            str : 공백 대신 들어갈 문자
+        2자리수로 출력하되 1자리면 앞자리 0을 출력
+        padStart(1, "0");
+    
+슬라이더 자동을 움직이게 하기
+
+부드러운 영역 이동
+    window.scrollTo(xpos, ypos)
+    window.scrollTo({top:x, left:y, behavior:"이동시효과"})
+        behavior : auto - 기본값. 내부 설정. 
+                   smooth - 부드럽게 이동.
+    offset : 요소의 위치정보
+        요소객체.offsetWidth : 요소의 너비
+        요소객체.offsetHeight : 요소의 높이
+        요소객체.offsetLeft : 요소의 왼쪽으로부터 얼마나 떨어져 있는지
+        요소객체.offsetTop : 요소가 위로붜 얼마나 떨어져 있는지
+
+
+무한 스크롤 페이지 만들기
+    onscroll : 스크롤 이벤트를 처리하는 속성.
     

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>현재시간</h2>
+        <h3 id="ti"></h3>
+    </body>
+    <script>
+        const ti = document.getElementById("ti");
+        
+        function getTime() {
+            const now = new Date(); //날짜와 시간을 가져오는 객체
+            let h = String(now.getHours()).padStart(2, "0");
+            let m = String(now.getMinutes()).padStart(2, "0");
+            let s = String(now.getSeconds()).padStart(2, "0");
+            ti.innerHTML=`${h}:${m}:${s}`
+        }
+        setInterval(getTime, 1000);
+    </script>
+</html>
